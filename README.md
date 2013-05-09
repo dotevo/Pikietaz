@@ -2,7 +2,7 @@ Pikietaż
 =========
 
 
-Application to collet data (milestones) [OpenStreetMap](http://www.openstreetmap.org)
+Application to collect data (milestones) [OpenStreetMap](http://www.openstreetmap.org)
 
 
 Author
