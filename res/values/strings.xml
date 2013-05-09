@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Pikietaż</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="add_button">Dodaj</string>
+    <string name="errorGpsDisabled">Wyłączony GPS</string>
+    <string name="systemSettings">Ustawienia systemu</string>
+    <string name="quit">Wyjście</string>
+    <string name="errorStorageRO">Dysk tylko do odczytu</string>
+    <string name="errorStorageUnavailable">Brak miejsca na dysku</string>
+    <string name="statusReadyString">Gotowe</string>
+    <string name="statusStartedString">Wystartowany</string>
+    <string name="statusStoppedString">Zatrzymany</string>
+    <string name="statusFixString">Fix</string>
+	<string name="FolderCreationFailed">Nie mogę utworzyć katalogu</string>
+	<string name="errorFileOpen">Błąd pliku</string>
+</resources>
