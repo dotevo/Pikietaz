@@ -19,6 +19,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.location.GpsSatellite;
 import android.location.GpsStatus;
 import android.location.GpsStatus.Listener;
@@ -41,6 +42,8 @@ public class PikietazActivity extends Activity implements OnClickListener, Locat
 	private static final float locationUpdateMinDistance = 0; // minimum distance for location updates in m
 	private Location location;
 	private OsmWriter osmWriter = null;
+	
+	private int lastclick=0;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -132,9 +135,10 @@ public class PikietazActivity extends Activity implements OnClickListener, Locat
 	public void onClick(View arg0) {
 		switch (arg0.getId()) {
 		case R.id.minus_button:
+			lastclick=-1;
 			pk_edit.setText(""+(Integer.parseInt(pk_edit.getText().toString())-1));
 			break;
-		case R.id.add_button:	
+		case R.id.add_button:
 			Log.i("Pikietaz", "new point");
 			if (location==null){
 				Log.e("Pikietaz", "no location!");
@@ -149,8 +153,13 @@ public class PikietazActivity extends Activity implements OnClickListener, Locat
 			} catch (IOException e) {
 				showDialogFatalError(R.string.errorFileOpen);
 			}
+			Toast.makeText(this,"pk=" + pk_edit.getText().toString(), Toast.LENGTH_LONG).show();
+			//Auto(increment/decrement)
+			pk_edit.setText(""+(Integer.parseInt(pk_edit.getText().toString())+lastclick));
+			
 			break;
 		case R.id.plus_button:
+			lastclick=1;
 			pk_edit.setText(""+(Integer.parseInt(pk_edit.getText().toString())+1));
 			break;
 		}

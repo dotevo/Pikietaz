@@ -43,8 +43,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/ref_label"
+        android:minHeight="100dp"
         android:minWidth="120dip"
-        android:text="-" />
+        android:text="-"
+        android:textSize="@dimen/Big" />
 
     <Button
         android:id="@+id/add_button"
@@ -74,8 +76,10 @@
         android:layout_above="@+id/pk_edit"
         android:layout_alignParentRight="true"
         android:layout_toRightOf="@+id/minus_button"
+        android:minHeight="100dp"
         android:minWidth="120dip"
-        android:text="+" />
+        android:text="+"
+        android:textSize="@dimen/Big" />
 
     <TextView
         android:id="@+id/status"
