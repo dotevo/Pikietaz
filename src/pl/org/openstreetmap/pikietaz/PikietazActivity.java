@@ -160,6 +160,7 @@ public class PikietazActivity extends Activity implements OnClickListener, Locat
 			HashMap<String, String> tags=new HashMap<String, String>();
 			tags.put("highway", "milestone");
 			tags.put("pk", pk_edit.getText().toString());
+			tags.put("source", "GPS");
 			tags.put("ref", ref_edit.getText().toString());
 			try {
 				osmWriter.addNode(location.getLatitude(), location.getLongitude(), tags);
