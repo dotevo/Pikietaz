@@ -8,6 +8,7 @@ import java.util.HashMap;
 
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -17,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,6 +38,7 @@ public class PikietazActivity extends Activity implements OnClickListener, Locat
 	private EditText ref_edit;
 	private EditText pk_edit;
 	private TextView status_label;
+	private Button add_button;
 	private String basename;
 	private LocationManager locationManager = null;
 	private static final long locationUpdateMinTimeMs = 0; // minimum time for location updates in ms
@@ -71,7 +74,9 @@ public class PikietazActivity extends Activity implements OnClickListener, Locat
         pk_edit = (EditText) findViewById(R.id.pk_edit);
         ref_edit = (EditText) findViewById(R.id.ref_edit);
         status_label = (TextView) findViewById(R.id.status);
-        findViewById(R.id.add_button).setOnClickListener(this);
+        add_button=(Button) findViewById(R.id.add_button);
+        add_button.setOnClickListener(this);
+        
         findViewById(R.id.plus_button).setOnClickListener(this);
         findViewById(R.id.minus_button).setOnClickListener(this);
         
@@ -130,6 +135,14 @@ public class PikietazActivity extends Activity implements OnClickListener, Locat
         return true;
     }
 
+    private Runnable unlockButton = new Runnable()
+    {
+        @Override
+        public void run()
+        {
+           add_button.setEnabled(true);
+        }
+     };
 
 	@Override
 	public void onClick(View arg0) {
@@ -157,6 +170,10 @@ public class PikietazActivity extends Activity implements OnClickListener, Locat
 			//Auto(increment/decrement)
 			pk_edit.setText(""+(Integer.parseInt(pk_edit.getText().toString())+lastclick));
 			
+			
+			Handler myHandler = new Handler();
+			add_button.setEnabled(false);
+			myHandler.postDelayed(unlockButton, 1000);
 			break;
 		case R.id.plus_button:
 			lastclick=1;

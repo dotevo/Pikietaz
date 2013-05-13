@@ -28,15 +28,6 @@
         android:ems="10"
         android:text="0" />
 
-    <TextView
-        android:id="@+id/pk_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:text="Pk="
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
     <Button
         android:id="@+id/minus_button"
         android:layout_width="wrap_content"
@@ -56,6 +47,7 @@
         android:layout_below="@+id/pk_edit"
         android:layout_marginTop="32dp"
         android:layout_toRightOf="@+id/ref_label"
+        android:minHeight="100dp"
         android:text="Dodaj" />
 
     <EditText
@@ -89,6 +81,15 @@
         android:layout_alignRight="@+id/ref_edit"
         android:layout_below="@+id/ref_edit"
         android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/pk_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/pk_edit"
+        android:layout_alignParentLeft="true"
+        android:text="Pk="
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>
