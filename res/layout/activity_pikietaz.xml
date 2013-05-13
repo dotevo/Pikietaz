@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/add_button"
         android:layout_marginTop="37dp"
-        android:text="Ref="
+        android:text="ref="
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
@@ -89,7 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/pk_edit"
         android:layout_alignParentLeft="true"
-        android:text="Pk="
+        android:text="pk="
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>
